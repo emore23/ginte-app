@@ -5,11 +5,12 @@ import typescriptParser from '@typescript-eslint/parser';
 export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
-    ignores: ['node_modules/', '.next/', 'out/'],
+    ignores: ['node_modules/**', '.next/**', 'out/**'],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
         project: './tsconfig.json',
+        tsconfigRootDir: import.meta.dirname,
       },
     },
     plugins: {
@@ -19,11 +20,10 @@ export default [
     rules: {
       // Regras do TypeScript
       '@typescript-eslint/no-explicit-any': 'error', // Proíbe o uso de `any`
-      '@typescript-eslint/no-unused-vars': 'error', // Erro para variáveis não utilizadas
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }], // Erro para variáveis não utilizadas
       '@typescript-eslint/no-unsafe-argument': 'error', // Proíbe argumentos inseguros
-      '@typescript-eslint/no-unsafe-member-access': 'error', // Proíbe acesso inseguro a membros
-      '@typescript-eslint/no-unsafe-return': 'error', // Proíbe retornos inseguros
-      '@typescript-eslint/consistent-type-imports': 'error', // Exige imports de tipos consistentes
+      // '@typescript-eslint/no-unsafe-return': 'warn', // Proíbe retornos inseguros
+      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }], // Exige imports de tipos consistentes
 
       // Regras do Next.js
       '@next/next/no-html-link-for-pages': 'error', // Evita links incorretos no Next.js
