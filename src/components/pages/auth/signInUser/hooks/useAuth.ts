@@ -42,9 +42,12 @@ export function useAuth() {
       toast.success('Login realizado com sucesso!');
       router.push('/dashboard');
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    onError: (error: any) => {
-      toast.error((error.response?.data?.message as string) || 'Erro ao fazer login');
+    onError: (error: unknown) => {
+      if (error instanceof Error) {
+        toast.error(error.response.data.message as string);
+      } else {
+        toast.error('Erro ao fazer login');
+      }
     },
   });
 

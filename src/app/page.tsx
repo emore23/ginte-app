@@ -14,7 +14,7 @@ export default function Home() {
       return;
     }
 
-    router.replace('/dashboard');
+    // router.replace('/dashboard');
   }, [isAuthenticated, router]);
 
   return null;
