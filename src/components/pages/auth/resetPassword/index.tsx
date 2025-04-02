@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Cookies from 'js-cookie';
-import { EmailForm, PasswordResetForm } from './components/ResetPasswordForms/ResetPasswordForms';
+import { EmailForm } from './components/ResetPasswordForms/EmailForm';
+import { PasswordResetForm } from './components/ResetPasswordForms/PasswordResetForm';
 import { InstructionsCard } from './components/InstructionsCard/InstructionsCard';
 import { useUpdateUserPassword } from './hooks/useUpdateUserPassword';
 import { useSendEmailResetPassword } from './hooks/useSendEmailResetPassword';
+import { FloatingCircles } from './components/FloatingCircles/FloatingCircles';
 
 export default function ResetPasswordComponent() {
   const [step, setStep] = useState<'email' | 'instructions' | 'password'>('email');
@@ -21,18 +23,18 @@ export default function ResetPasswordComponent() {
     const checkToken = () => {
       const urlToken = searchParams.get('token');
       const cookieToken = Cookies.get('token');
-      
+
       if (!urlToken && !cookieToken && step !== 'email' && step !== 'instructions') {
         router.push('/auth/login');
       }
     };
 
     checkToken();
-    
+
     const interval = setInterval(checkToken, 5000);
-    
+
     window.addEventListener('focus', checkToken);
-    
+
     return () => {
       clearInterval(interval);
       window.removeEventListener('focus', checkToken);
@@ -80,8 +82,12 @@ export default function ResetPasswordComponent() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
-      <div className="w-full max-w-md space-y-8">
+    <div className="relative flex min-h-screen w-full items-center justify-center bg-white top-0 bottom-0 right-0 left-0">
+      <div className="absolute inset-0 flex items-center justify-center z-0">
+        <FloatingCircles />
+      </div>
+
+      <div className="relative z-10 flex w-full items-center justify-center">
         {step === 'email' && (
           <EmailForm onSubmit={handleEmailSubmit} isSubmitting={isSendingEmail} />
         )}

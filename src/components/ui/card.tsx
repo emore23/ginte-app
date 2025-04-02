@@ -6,14 +6,16 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card"
+      style={{ backgroundColor: "rgba(250, 250, 250, 0.75)" }}
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
         className
       )}
       {...props}
     />
-  )
+  );
 }
+
 
 function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
