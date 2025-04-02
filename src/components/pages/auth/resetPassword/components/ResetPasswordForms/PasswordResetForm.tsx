@@ -15,7 +15,8 @@ import {
 import { Card, CardHeader, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
 import { passwordResetSchema } from '@/utils/schemas/resetPasswordSchema';
 import IconComponent from '@/components/shared/IconComponent/iconComponent';
-import { KeyRound, LockOpen } from 'lucide-react';
+import { Eye, EyeOff, KeyRound, LockOpen } from 'lucide-react';
+import { useState } from 'react';
 
 interface PasswordResetFormProps {
   onSubmit: (values: { newPassword: string; confirmPassword: string }) => void;
@@ -23,6 +24,9 @@ interface PasswordResetFormProps {
 }
 
 export function PasswordResetForm({ onSubmit, isSubmitting }: PasswordResetFormProps) {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+
   const form = useForm({
     resolver: zodResolver(passwordResetSchema),
     defaultValues: {
@@ -56,12 +60,24 @@ export function PasswordResetForm({ onSubmit, isSubmitting }: PasswordResetFormP
                 <FormItem>
                   <FormLabel className="text-sm text-[#18181B]">Senha</FormLabel>
                   <FormControl>
-                    <Input
-                      className="text-base text-[#A1A1AA] h-[40px]"
-                      placeholder="Digite a nova senha"
-                      type="password"
-                      {...field}
-                    />
+                    <div className="relative">
+                      <Input
+                        className="text-base text-[#A1A1AA] h-[40px]"
+                        placeholder="Digite a nova senha"
+                        type={showPassword ? "text" : "password"}
+                        {...field}
+                      />
+                      <button
+                        type="button"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                        onClick={() => setShowPassword(!showPassword)}>
+                        {showPassword ? (
+                          <EyeOff className="h-4 w-4 text-[#000]" />
+                        ) : (
+                          <Eye className="h-4 w-4 text-[#000]" />
+                        )}
+                      </button>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -74,12 +90,24 @@ export function PasswordResetForm({ onSubmit, isSubmitting }: PasswordResetFormP
                 <FormItem>
                   <FormLabel className="text-sm text-[#18181B]">Confirmar senha</FormLabel>
                   <FormControl>
-                    <Input
-                      className="text-base text-[#A1A1AA] h-[40px]"
-                      placeholder="Digite a senha novamente"
-                      type="password"
-                      {...field}
-                    />
+                    <div className="relative">
+                      <Input
+                        className="text-base text-[#A1A1AA] h-[40px]"
+                        placeholder="Digite a senha novamente"
+                        type={showNewPassword ? "text" : "password"}
+                        {...field}
+                      />
+                      <button
+                        type="button"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                        onClick={() => setShowNewPassword(!showNewPassword)}>
+                        {showNewPassword ? (
+                          <EyeOff className="h-4 w-4 text-[#000]" />
+                        ) : (
+                          <Eye className="h-4 w-4 text-[#000]" />
+                        )}
+                      </button>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
