@@ -17,15 +17,11 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
 }>) {
-  const { locale } = await params;
-
   return (
-    <html lang={locale}>
+    <html lang="pt-br">
       <body className={cn(poppins.className, poppins.variable, 'bg-neutral-50 overflow-x-hidden')}>
         <Providers>{children}</Providers>
       </body>
