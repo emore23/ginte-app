@@ -61,7 +61,7 @@ export function AuthForm({ onSubmit, isSubmitting, isRegister }: AuthFormProps) 
               {!isRegister && (
                 <div className="flex justify-end">
                   <Link
-                    href="/forgot-password"
+                    href="/auth/reset-password"
                     className="text-sm text-muted-foreground hover:underline">
                     Esqueceu sua senha?
                   </Link>

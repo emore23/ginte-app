@@ -1,7 +1,7 @@
 'use client';
 
-import { AuthForm } from '@/components/shared/form';
-import { useAuth } from '@/hooks/useAuth';
+import { AuthForm } from '@/components/pages/auth/signInUser/components/form';
+import { useAuth } from '@/components/pages/auth/signInUser/hooks/useAuth';
 import { type authSchema } from '@/utils/schemas/authSchema';
 import { type z } from 'zod';
 
