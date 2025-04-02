@@ -1,0 +1,211 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-04-02T18:11:47.333Z",
+  "__export_source": "insomnia.desktop.app:v9.3.0",
+  "resources": [
+    {
+      "_id": "req_f31f9bec543f4deb94b61462e00a2911",
+      "parentId": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "modified": 1743539502029,
+      "created": 1743539451157,
+      "url": "{{ _.baseUrl }}/auth/sign-up",
+      "name": "(Auth) Sign Up",
+      "description": "",
+      "method": "POST",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "User-Agent", "value": "insomnia/9.3.0" }],
+      "authentication": {},
+      "metaSortKey": -1743539451157,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "parentId": null,
+      "modified": 1743537507364,
+      "created": 1743537507364,
+      "name": "Ginte",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_d9320f667131416e8848287bcc434465",
+      "parentId": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "modified": 1743539512165,
+      "created": 1743537642763,
+      "url": "{{ _.baseUrl }}/auth/sign-in",
+      "name": "(Auth) Sign in ",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"testedesafio@teste.com\",\n\t\"password\": \"Abc1234@\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "User-Agent", "value": "insomnia/9.3.0" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1743539443533.5,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_4ca3588708974519842a188014e825f3",
+      "parentId": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "modified": 1743601217534,
+      "created": 1743539413978,
+      "url": "{{ _.baseUrl }}/auth/reset-password",
+      "name": "(Auth) Send Mail Updata Password",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"testedesafio@teste.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "User-Agent", "value": "insomnia/9.3.0" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1743539439721.75,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c6569cd79ff44278a74cabdebaf087ab",
+      "parentId": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "modified": 1743604734748,
+      "created": 1743539435910,
+      "url": "{{ _.baseUrl }}/auth/update-new-password",
+      "name": "(Auth) Update Password",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"password\": \"StrongPass123!\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "User-Agent", "value": "insomnia/9.3.0" }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlbW8gVXNlciIsImVtYWlsIjoidGVzdGVkZXNhZmlvQHRlc3RlLmNvbSIsInN1YiI6IjZhOTJmYmE5LTdhYzctNDVlYS1iZjAzLTU2YTdlZGRkMGExNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0MzYwNDYyNiwiZXhwIjoxNzQzNjkxMDI2fQ.odbE1DrXJXMS00_1_96VpgKspaZr_AFYDiVyqvp95nE"
+      },
+      "metaSortKey": -1743539435910,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_cef5f1ab6525404e8cec90ff1c0c2b04",
+      "parentId": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "modified": 1743539561365,
+      "created": 1743539043222,
+      "url": "{{ _.baseUrl }}/auth/validate-email",
+      "name": "(Auth) Validate Email",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "User-Agent", "value": "insomnia/9.3.0" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlbW8gVXNlciIsImVtYWlsIjoidGVzdGVkZXNhZmlvQHRlc3RlLmNvbSIsInN1YiI6IjZhOTJmYmE5LTdhYzctNDVlYS1iZjAzLTU2YTdlZGRkMGExNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0MzUzOTA3NSwiZXhwIjoxNzQzNjI1NDc1fQ.24zQ9CTykIpYd_YzSD6BK9n7qojdkqu7iXlEf0_tdqM"
+      },
+      "metaSortKey": -1743539400620.5,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6a2ee23ab89949899df87766625ae218",
+      "parentId": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "modified": 1743539408257,
+      "created": 1743539365331,
+      "url": "{{ _.baseUrl }}/auth/validate-session",
+      "name": "(Auth) Validate Session",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "User-Agent", "value": "insomnia/9.3.0" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlbW8gVXNlciIsImVtYWlsIjoidGVzdGVkZXNhZmlvQHRlc3RlLmNvbSIsInN1YiI6IjZhOTJmYmE5LTdhYzctNDVlYS1iZjAzLTU2YTdlZGRkMGExNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0MzUzOTA3NSwiZXhwIjoxNzQzNjI1NDc1fQ.24zQ9CTykIpYd_YzSD6BK9n7qojdkqu7iXlEf0_tdqM"
+      },
+      "metaSortKey": -1743539365331,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_3b4e1e4439968b684777c121de60687beb87523a",
+      "parentId": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "modified": 1743604732877,
+      "created": 1743537507366,
+      "name": "Base Environment",
+      "data": { "baseUrl": "http://testesback.ginte.com.br" },
+      "dataPropertyOrder": { "&": ["baseUrl"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1743537507366,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_3b4e1e4439968b684777c121de60687beb87523a",
+      "parentId": "wrk_397cd0fdd026420fabec680df0bc4a49",
+      "modified": 1743604732871,
+      "created": 1743537507369,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
