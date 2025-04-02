@@ -109,7 +109,7 @@ yarn format     # Formata o código automaticamente
 
 O projeto está configurado para deploy na **Vercel**:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+[![Deploy with Vercel](https://vercel.com/button)](https://ginte-app.vercel.app/)
 
 ## 📄 Licença
 
