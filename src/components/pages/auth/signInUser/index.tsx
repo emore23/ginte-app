@@ -1,13 +1,13 @@
 'use client';
 
-import Image from 'next/image';
 import { type z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { type authSchema } from '@/utils/schemas/authSchema';
 import { AuthLoginForm } from '@/components/pages/auth/signInUser/components/AuthLoginForm/AuthLoginForm';
 import { useAuth } from '@/components/pages/auth/signInUser/hooks/useAuth';
 import LogoGinteApp from '../../../../../public/assets/ginte-logo.png';
-import PulsingDiamond from './components/AnimatedDiamond/AnimatedDiamond';
+import AnimatedDiamond from './components/AnimatedDiamond/AnimatedDiamond';
+import IconComponent from '@/components/shared/IconComponent/iconComponent';
 
 export default function SignInUser() {
   const { login, isLoggingIn } = useAuth();
@@ -18,10 +18,10 @@ export default function SignInUser() {
 
   return (
     <div className="flex flex-row gap-10 w-full h-full justify-center">
-      {/* Lado esquerdo - Formulário */}
       <div className="flex flex-col justify-center w-full max-w-[680px] xl:px-16 py-16">
         <div className="flex flex-col items-start gap-2 text-center w-full">
-          <Image src={LogoGinteApp} alt="Logo Ginte App" width={80} height={80} />
+          <IconComponent backgroundColor="#000" textColor="#fff" iconUrl={LogoGinteApp} />
+
           <h1 className="text-3xl font-bold mt-3">Entre na sua conta</h1>
           <p className="text-gray-600 text-lg text-start">
             Acesse sua conta e gerencie sua empresa
@@ -40,7 +40,7 @@ export default function SignInUser() {
       </div>
 
       <div className="hidden xl:flex">
-        <PulsingDiamond />
+        <AnimatedDiamond />
       </div>
     </div>
   );

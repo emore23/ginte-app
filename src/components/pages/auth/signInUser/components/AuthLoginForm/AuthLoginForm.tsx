@@ -102,7 +102,7 @@ export function AuthLoginForm({ onSubmit, isSubmitting }: AuthFormProps) {
           />
         </div>
 
-        <Button type="submit" className="w-full bg-[#3B82F6] p-5 h-auto" loading={isSubmitting}>
+        <Button type="submit" className="w-full bg-[#3B82F6] hover:bg-[#3B82F6]/90 p-5 h-auto" loading={isSubmitting}>
           <LogIn />
           Entrar
         </Button>
