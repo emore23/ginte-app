@@ -107,6 +107,22 @@ yarn format     # Formata o código automaticamente
 
 ## 🚀 Deploy
 
+⚠️ Atenção: API HTTP e Conteúdo Não Seguro
+
+O endpoint da API foi disponibilizado em `http`, o que pode causar bloqueios nos navegadores modernos devido a restrições de segurança ao misturar conteúdos `http` e `https` (Mixed Content). Isso impede que a aplicação consuma a API corretamente.
+
+### 🔧 Como desabilitar a verificação de conteúdo não seguro?
+
+#### **Google Chrome**
+
+1. Acesse a página da aplicação.
+2. Clique no ícone de **cadeado** na barra de endereços.
+3. Vá para **Configurações do site**.
+4. Role até **Conteúdo não seguro** e selecione **Permitir**.
+5. Atualize a página (`F5`).
+
+![Demonstração](public/assets/conteudo-não-seguro-chrome.gif)
+
 O projeto está configurado para deploy na **Vercel**:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://ginte-app.vercel.app/)
